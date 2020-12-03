@@ -1,58 +1,145 @@
+/* eslint-disable vue/valid-v-on */
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
-  </div>
+  <b-row class="row-body">
+    <b-col>
+      <br />
+      <h1 class="text-margin-left" style="font-weight: 900">Admission in 30</h1>
+      <br />
+      <b-form class="container">
+        <b-overlay :show="show" rounded="sm">
+          <b-form-group
+            id="input-group-1"
+            label="Email Address"
+            class="text-left"
+            style="font-weight: 900"
+            label-for="input-1"
+            description="We'll never share your email with anyone"
+          >
+            <b-form-input
+              id="input-1"
+              v-model="form.email"
+              type="email"
+              placeholder="Enter email"
+              class="w-75"
+            >
+            </b-form-input>
+          </b-form-group>
+          <b-form-group
+            id="input-group-2"
+            label="Password"
+            class="text-left"
+            label-for="input-2"
+            style="font-weight: 900"
+            description="Should be more than 6 characters"
+          >
+            <b-form-input
+              id="input-2"
+              v-model="form.password"
+              type="password"
+              placeholder="Enter password"
+              class="w-75"
+            >
+            </b-form-input>
+          </b-form-group>
+          <b-button
+            type="submit"
+            variant="warning"
+            @click="signIn"
+            style="margin-right: 10px; font-weight: 900"
+            >Sign In <b-icon-chevron-right></b-icon-chevron-right
+          ></b-button>
+
+          <b-button type="submit" variant="warning" style="font-weight: 900"
+            >Sign Up <b-icon-person></b-icon-person
+          ></b-button>
+          <div style="height: 30px;" />
+          <span style="font-size: 12px"
+            >Forgotten password? Kindly click here to reset password
+            <b-link>Reset</b-link></span
+          >
+        </b-overlay>
+      </b-form>
+    </b-col>
+    <b-col class="row-back">
+      <h3 style="color: white; margin-top: 100px">
+        Student Management Portal.
+      </h3>
+      <div style="height: 50px"></div>
+      <p style="color: white">* Manage Your Applications.</p>
+      <p style="color: white">
+        * Get Approvals from Selected Schools / universities.
+      </p>
+      <p style="color: white">
+        * Get 24/7 Assistance & Information about our processes.
+      </p>
+    </b-col>
+  </b-row>
 </template>
 
 <script>
+import router from "../router";
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
-    msg: String
-  }
-}
+    msg: String,
+  },
+
+  data() {
+    return {
+      form: {
+        email: "",
+        password: "",
+        rememberMe: false,
+      },
+      show: false,
+    };
+  },
+
+  methods: {
+    // Sign in method
+    signIn: function() {
+      this.show = true;
+      setTimeout(function() {
+        this.show = false;
+        router.push({ path: "dashboard" });
+      }, 3000);
+    },
+
+    // Sign up method
+    signUp: function() {},
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.container {
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.text-left {
+  text-align: end;
+  color: black;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+.row-back {
+  background: url("../assets/back.jpg") no-repeat;
+  background-size: cover;
+  --background: rgb(34, 193, 195);
+  --background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgb(240, 203, 124) 100%
+  );
 }
-a {
-  color: #42b983;
+
+.row-body {
+  height: 100%;
+}
+
+.text-margin-left {
+  margin-left: 20px;
+  color: rgb(131, 115, 115);
 }
 </style>
