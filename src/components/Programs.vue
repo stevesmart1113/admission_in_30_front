@@ -11,7 +11,7 @@
     </h4>
     <vcl-facebook v-if="programs.length <= 0"></vcl-facebook>
     <b-card
-      @click="getCourses()"
+      @click="getCourses"
       v-for="program in programs"
       :key="program.programs.program_id"
       class="card-enhanced-one"
