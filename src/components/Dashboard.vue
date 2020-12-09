@@ -1,13 +1,7 @@
 <template>
   <div>
     <Header />
-    <b-sidebar
-      id="sidebar-1"
-      title="Menu"
-      shadow
-      bg-variant="dark"
-      text-variant="light"
-    >
+    <b-sidebar id="sidebar-1" title="Menu" shadow class="nav-color">
       <div class="px-3 py-2">
         <div>
           <b-nav vertical class="w-30">
@@ -33,30 +27,30 @@
           <b-button
             @click="changeBreadCrumb('universities')"
             class="btn-spacing"
-            variant="outline-danger"
+            variant="outline-info"
             to="/dashboard/universities"
             >Universities</b-button
           >
           <b-button
             @click="changeBreadCrumb('schools')"
             class="btn-spacing"
-            variant="outline-success"
+            variant="outline-info"
             to="/dashboard/schools"
             >Schools</b-button
           >
-          <b-button
+          <!-- <b-button
             @click="changeBreadCrumb('courses')"
-            variant="outline-primary"
+            variant="outline-info"
             to="/dashboard/courses"
             >Courses</b-button
-          >
+          > -->
           <div style="height:20px"></div>
           <router-view></router-view>
         </div>
       </b-col>
-      <b-col style="height: 100vh">
+      <b-col style="height: 100vh" class="border-left">
         <transition name="fade-enter">
-          <b-img fluid src="/images/8294.jpg"></b-img>
+          <!--b-img fluid src="/images/8294.jpg"></b-img>-->
         </transition>
       </b-col>
     </b-row>
@@ -77,6 +71,7 @@ export default {
   data() {
     return {
       link_name: "",
+      universities: [],
       items: [
         {
           text: this.link_name,
@@ -88,6 +83,7 @@ export default {
 
   created() {
     this.items[this.items.length - 1].text = "Home";
+    this.getUniversities();
   },
   watch: {},
   methods: {
@@ -100,6 +96,27 @@ export default {
         this.items[this.items.length - 1].text = "Courses";
       }
     },
+
+    getUniversities() {
+      this.axios
+        .get("http://localhost:8000/universities")
+        .then((result) => {
+          if (result.status == 200 && result.statusText === "OK") {
+            console.log(result.data);
+            this.universities = result.data;
+          } else {
+            this.universities = [];
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  },
+
+  mounted() {
+    console.log("called");
+    this.getUniversities();
   },
 };
 </script>
@@ -110,15 +127,23 @@ export default {
   margin-left: 5px;
 }
 
-.sidebar-background {
-  background-image: url("");
-}
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.1s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+
+.nav-color {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    76deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(148, 105, 40, 1) 0%,
+    rgba(205, 120, 28, 1) 48%,
+    rgba(0, 212, 255, 1) 79%
+  );
+  color: white;
 }
 </style>

@@ -43,13 +43,16 @@
           </b-form-group>
           <b-button
             type="submit"
-            variant="warning"
+            variant="outline-warning"
             @click="signIn"
             style="margin-right: 10px; font-weight: 900"
             >Sign In <b-icon-chevron-right></b-icon-chevron-right
           ></b-button>
 
-          <b-button type="submit" variant="warning" style="font-weight: 900"
+          <b-button
+            type="submit"
+            variant="warning"
+            style="font-weight: 900"
             >Sign Up <b-icon-person></b-icon-person
           ></b-button>
           <div style="height: 30px;" />
@@ -141,5 +144,18 @@ export default {
 .text-margin-left {
   margin-left: 20px;
   color: rgb(131, 115, 115);
+}
+
+.btn-color {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    76deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(148, 105, 40, 1) 0%,
+    rgba(205, 120, 28, 1) 48%,
+    rgba(0, 212, 255, 1) 79%
+  );
+  color: white;
+  border-width: 0px;
 }
 </style>

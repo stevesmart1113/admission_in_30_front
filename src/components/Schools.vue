@@ -1,7 +1,7 @@
 <template>
   <div>
     <h4 class="header-text">Schools</h4>
-    <hr />
+  
     <div style="margin: 20px">
       <vcl-facebook></vcl-facebook>
     </div>

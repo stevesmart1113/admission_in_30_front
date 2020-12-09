@@ -5,6 +5,7 @@ import Dashboard from "../components/Dashboard";
 import Universities from "../components/Universities";
 import Schools from "../components/Schools";
 import Courses from "../components/Courses";
+import Programs from "../components/Programs"
 
 Vue.use(Router);
 
@@ -21,10 +22,12 @@ export default new Router({
       component: Dashboard,
       children: [
         {
+          name: "universities",
           path: "/dashboard/universities",
           component: Universities,
         },
         {
+          name: "schools",
           path: "/dashboard/schools",
           component: Schools,
         },
@@ -32,6 +35,11 @@ export default new Router({
           path: "/dashboard/courses",
           component: Courses,
         },
+        {
+          name: "courses",
+          path: "/dashboard/programs",
+          component: Programs
+        }
       ],
     },
   ],

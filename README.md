@@ -23,3 +23,4 @@ yarn lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 "# admission_in_30" 
+# admission_in_thirty
