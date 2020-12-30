@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="background-color: #ffffff">
     <Header />
     <b-sidebar id="sidebar-1" title="Menu" shadow class="nav-color">
       <div class="px-3 py-2">
@@ -21,39 +21,41 @@
       </div>
     </b-sidebar>
     <b-breadcrumb :items="items"></b-breadcrumb>
-    <b-row>
-      <b-col>
-        <div>
-          <b-button
-            @click="changeBreadCrumb('universities')"
-            class="btn-spacing"
-            variant="outline-info"
-            to="/dashboard/universities"
-            >Universities</b-button
-          >
-          <b-button
-            @click="changeBreadCrumb('schools')"
-            class="btn-spacing"
-            variant="outline-info"
-            to="/dashboard/schools"
-            >Schools</b-button
-          >
-          <!-- <b-button
+    <b-container>
+      <b-row>
+        <b-col>
+          <div>
+            <b-button
+              @click="changeBreadCrumb('universities')"
+              class="btn-spacing"
+              variant="outline-info"
+              to="/dashboard/universities"
+              >Universities</b-button
+            >
+            <b-button
+              @click="changeBreadCrumb('schools')"
+              class="btn-spacing"
+              variant="outline-info"
+              to="/dashboard/schools"
+              >Schools</b-button
+            >
+            <!-- <b-button
             @click="changeBreadCrumb('courses')"
             variant="outline-info"
             to="/dashboard/courses"
             >Courses</b-button
           > -->
-          <div style="height:20px"></div>
-          <router-view></router-view>
-        </div>
-      </b-col>
-      <b-col style="height: 100vh" class="border-left">
+            <div style="height:20px"></div>
+            <router-view></router-view>
+          </div>
+        </b-col>
+        <!-- <b-col style="height: 100vh" class="border-left">
         <transition name="fade-enter">
-          <!--b-img fluid src="/images/8294.jpg"></b-img>-->
+          <b-img fluid src="/images/8294.jpg"></b-img>
         </transition>
-      </b-col>
-    </b-row>
+      </b-col> -->
+      </b-row>
+    </b-container>
   </div>
 </template>
 

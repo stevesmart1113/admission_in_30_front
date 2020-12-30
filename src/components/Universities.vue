@@ -1,21 +1,22 @@
 <template>
   <div>
-    <h4 style="margin-left:20px">Universities.</h4>
-    <b-form-input
+    <!-- <h4 style="margin-left:20px">Universities.</h4> -->
+    <!-- <b-form-input
       v-model="text"
       placeholder="Search..."
       class="search-input"
-    ></b-form-input>
+    ></b-form-input> -->
     <div style="margin: 20px">
       <vcl-facebook v-if="universities.length <= 0"></vcl-facebook>
       <div v-else>
         <div>
           <div
             v-for="university in universities"
-            :key="university.name"
+            :key="university.id"
             style="margin-bottom: 15px"
           >
             <b-card class="card-enhanced">
+              <!-- <b-img-lazy v-bind:src="{{university.logo}}"></b-img-lazy> -->
               <b-card-title class="title-text-bold">{{
                 university.name
               }}</b-card-title>
@@ -26,10 +27,10 @@
               <b-card-footer>
                 <b-button-group>
                   <b-button
-                    variant="info"
+                    variant="outline-info"
                     class="btn-outlined-enhanced spacer"
-                    @click="getPrograms(university.id)"
-                    >Info <b-icon-info-circle
+                    @click="getPrograms(university)"
+                    >Apply<b-icon-check
                   /></b-button>
                   <!-- <b-button variant="outline-info" class="btn-outlined-enhanced"
                   >Apply <b-icon-check
@@ -49,9 +50,7 @@
             </b-card>
           </div>
         </div>
-        <div>
-          
-        </div>
+        <div></div>
         <div class="mt-3" style="margin-left: 25px">
           <b-pagination-nav
             size="md"
@@ -71,13 +70,14 @@ export default {
   watch: {},
   created() {
     this.axios
-      .get('universities').then((result) => {
+      .get("universities")
+      .then((result) => {
         if (result.status == 200 && result.statusText === "OK") {
-             console.log(result);
-             this.universities = result.data.results;
-             this.viewType = "universities";
+          console.log(result);
+          this.universities = result.data.results;
+          this.viewType = "universities";
         } else {
-             this.universities = [];
+          this.universities = [];
         }
       })
       .catch((err) => {
@@ -100,18 +100,23 @@ export default {
   },
 
   methods: {
-     getPrograms(id){
-       console.log(id)
-       this.axios.get("schools/program?school_id="+id).then((data) => {
-        if (data.status == 200 && data.statusText === "OK") {
-           this.programs = data.data.results;
-           console.log(data.data.results);
-           this.$router.push({name: "courses", params: data })
-        } else {
-           console.log("An error occured");
-        }
-      });
-     }
+    getPrograms(university) {
+      console.log(university.id);
+      this.axios
+        .get("schools/program?school_id=" + university.id)
+        .then((data) => {
+          if (data.status == 200 && data.statusText === "OK") {
+            this.programs = data.data.results;
+            console.log(data.data.results);
+            this.$router.push({
+              name: "courses",
+              params: { data: data, university: university },
+            });
+          } else {
+            console.log("An error occured");
+          }
+        });
+    },
   },
 };
 </script>
