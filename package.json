@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "start": "nuxt start"
   },
   "dependencies": {
     "@gomarky/vue-shimmer": "0.0.5",
@@ -13,25 +14,35 @@
     "bootstrap": "^4.5.3",
     "bootstrap-vue": "^2.20.1",
     "core-js": "^3.6.5",
+    "es-abstract": "^1.18.0-next.1",
+    "es6": "^0.0.7",
+    "node-es6": "^0.3.1",
+    "nuxt": "^2.14.12",
     "sass": "^1.30.0",
     "vue": "^2.6.12",
     "vue-axios": "^3.2.0",
     "vue-content-loading": "^1.6.0",
     "vue-js-star-rating": "^1.1.1",
     "vue-router": "^3.4.9",
-    "vue-stepper": "^1.4.2",
+    "vue-stepper": "^1.0.11",
     "vuelidate": "^0.7.6",
-    "vuex": "^3.6.0"
+    "vuex": "^3.6.0",
+    "yargs": "^16.2.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
+    "@webpack-cli/serve": "^1.2.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "sass-loader": "^10.1.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.1",
+    "webpack-merge": "^4.2.2"
   },
   "eslintConfig": {
     "root": true,

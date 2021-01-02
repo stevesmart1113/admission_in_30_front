@@ -1,0 +1,72 @@
+[
+  {
+    "name": "components-Courses",
+    "path": "/components/Courses",
+    "component": "/home/root/admission_in_thirty/pages/components/Courses.vue",
+    "chunkName": "pages/components/Courses",
+    "_name": "_6541c53e"
+  },
+  {
+    "name": "components-Dashboard",
+    "path": "/components/Dashboard",
+    "component": "/home/root/admission_in_thirty/pages/components/Dashboard.vue",
+    "chunkName": "pages/components/Dashboard",
+    "_name": "_9da4d406"
+  },
+  {
+    "name": "components-Header",
+    "path": "/components/Header",
+    "component": "/home/root/admission_in_thirty/pages/components/Header.vue",
+    "chunkName": "pages/components/Header",
+    "_name": "_d5570518"
+  },
+  {
+    "name": "components-HelloWorld",
+    "path": "/components/HelloWorld",
+    "component": "/home/root/admission_in_thirty/pages/components/HelloWorld.vue",
+    "chunkName": "pages/components/HelloWorld",
+    "_name": "_13df7fc7"
+  },
+  {
+    "name": "components-Programs",
+    "path": "/components/Programs",
+    "component": "/home/root/admission_in_thirty/pages/components/Programs.vue",
+    "chunkName": "pages/components/Programs",
+    "_name": "_b2f9d6d4"
+  },
+  {
+    "name": "components-Schools",
+    "path": "/components/Schools",
+    "component": "/home/root/admission_in_thirty/pages/components/Schools.vue",
+    "chunkName": "pages/components/Schools",
+    "_name": "_2174d1a8"
+  },
+  {
+    "name": "components-Universities",
+    "path": "/components/Universities",
+    "component": "/home/root/admission_in_thirty/pages/components/Universities.vue",
+    "chunkName": "pages/components/Universities",
+    "_name": "_ecb0a85a"
+  },
+  {
+    "name": "components-formsteps-StepOne",
+    "path": "/components/formsteps/StepOne",
+    "component": "/home/root/admission_in_thirty/pages/components/formsteps/StepOne.vue",
+    "chunkName": "pages/components/formsteps/StepOne",
+    "_name": "_df5a2792"
+  },
+  {
+    "name": "components-formsteps-StepTwo",
+    "path": "/components/formsteps/StepTwo",
+    "component": "/home/root/admission_in_thirty/pages/components/formsteps/StepTwo.vue",
+    "chunkName": "pages/components/formsteps/StepTwo",
+    "_name": "_ae8ac5c6"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/root/admission_in_thirty/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_08958980"
+  }
+]
