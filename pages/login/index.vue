@@ -49,10 +49,7 @@
             >Sign In <b-icon-chevron-right></b-icon-chevron-right
           ></b-button>
 
-          <b-button
-            type="submit"
-            variant="warning"
-            style="font-weight: 900"
+          <b-button type="submit" variant="warning" style="font-weight: 900"
             >Sign Up <b-icon-person></b-icon-person
           ></b-button>
           <div style="height: 30px;" />

@@ -1,72 +1,79 @@
 [
   {
+    "name": "login",
+    "path": "/login",
+    "component": "/Users/user/Documents/admission_in_30/pages/login/index.vue",
+    "chunkName": "pages/login/index",
+    "_name": "_1df98320"
+  },
+  {
     "name": "components-Courses",
     "path": "/components/Courses",
-    "component": "/home/root/admission_in_thirty/pages/components/Courses.vue",
+    "component": "/Users/user/Documents/admission_in_30/pages/components/Courses.vue",
     "chunkName": "pages/components/Courses",
-    "_name": "_6541c53e"
+    "_name": "_1896d00b"
   },
   {
     "name": "components-Dashboard",
     "path": "/components/Dashboard",
-    "component": "/home/root/admission_in_thirty/pages/components/Dashboard.vue",
+    "component": "/Users/user/Documents/admission_in_30/pages/components/Dashboard.vue",
     "chunkName": "pages/components/Dashboard",
-    "_name": "_9da4d406"
+    "_name": "_0d434627"
   },
   {
     "name": "components-Header",
     "path": "/components/Header",
-    "component": "/home/root/admission_in_thirty/pages/components/Header.vue",
+    "component": "/Users/user/Documents/admission_in_30/pages/components/Header.vue",
     "chunkName": "pages/components/Header",
-    "_name": "_d5570518"
+    "_name": "_2c66cd8a"
   },
   {
     "name": "components-HelloWorld",
     "path": "/components/HelloWorld",
-    "component": "/home/root/admission_in_thirty/pages/components/HelloWorld.vue",
+    "component": "/Users/user/Documents/admission_in_30/pages/components/HelloWorld.vue",
     "chunkName": "pages/components/HelloWorld",
-    "_name": "_13df7fc7"
+    "_name": "_3a7fd4dd"
   },
   {
     "name": "components-Programs",
     "path": "/components/Programs",
-    "component": "/home/root/admission_in_thirty/pages/components/Programs.vue",
+    "component": "/Users/user/Documents/admission_in_30/pages/components/Programs.vue",
     "chunkName": "pages/components/Programs",
-    "_name": "_b2f9d6d4"
+    "_name": "_7b7c91a8"
   },
   {
     "name": "components-Schools",
     "path": "/components/Schools",
-    "component": "/home/root/admission_in_thirty/pages/components/Schools.vue",
+    "component": "/Users/user/Documents/admission_in_30/pages/components/Schools.vue",
     "chunkName": "pages/components/Schools",
-    "_name": "_2174d1a8"
+    "_name": "_6cac8452"
   },
   {
     "name": "components-Universities",
     "path": "/components/Universities",
-    "component": "/home/root/admission_in_thirty/pages/components/Universities.vue",
+    "component": "/Users/user/Documents/admission_in_30/pages/components/Universities.vue",
     "chunkName": "pages/components/Universities",
-    "_name": "_ecb0a85a"
+    "_name": "_ecf1d92e"
   },
   {
     "name": "components-formsteps-StepOne",
     "path": "/components/formsteps/StepOne",
-    "component": "/home/root/admission_in_thirty/pages/components/formsteps/StepOne.vue",
+    "component": "/Users/user/Documents/admission_in_30/pages/components/formsteps/StepOne.vue",
     "chunkName": "pages/components/formsteps/StepOne",
-    "_name": "_df5a2792"
+    "_name": "_66f2d261"
   },
   {
     "name": "components-formsteps-StepTwo",
     "path": "/components/formsteps/StepTwo",
-    "component": "/home/root/admission_in_thirty/pages/components/formsteps/StepTwo.vue",
+    "component": "/Users/user/Documents/admission_in_30/pages/components/formsteps/StepTwo.vue",
     "chunkName": "pages/components/formsteps/StepTwo",
-    "_name": "_ae8ac5c6"
+    "_name": "_7f5a8347"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/home/root/admission_in_thirty/pages/index.vue",
+    "component": "/Users/user/Documents/admission_in_30/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_08958980"
+    "_name": "_dd826ad4"
   }
 ]
