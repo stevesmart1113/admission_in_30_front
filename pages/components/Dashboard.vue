@@ -101,7 +101,7 @@ export default {
 
     getUniversities() {
       this.axios
-        .get("http://http://157.230.209.212:8081/universities")
+        .get("http://157.230.209.212:8081/universities")
         .then((result) => {
           if (result.status == 200 && result.statusText === "OK") {
             console.log(result.data);

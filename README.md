@@ -25,3 +25,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 "# admission_in_30" 
 # admission_in_thirty
 # admission_in_30_frontend
+# admission_in_30_frontend
