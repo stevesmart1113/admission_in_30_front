@@ -14,12 +14,12 @@ Vue.config.productionTip = false;
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(Router);
-Vue.use(VueContentPlaceholders)
+Vue.use(VueContentPlaceholders) 
 Vue.use(VueAxios, axios)
 Vue.use(vueStarRate)
 
 window.axios = axios
-axios.defaults.baseURL = 'http://157.230.209.212:8081/'
+axios.defaults.baseURL = "http://localhost:8000/"
 
 new Vue({
   el: '#app',

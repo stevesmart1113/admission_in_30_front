@@ -16,6 +16,20 @@
         ></vue-star-rate>
       </b-card>
     </div>
+    <div class="card">
+      <div class="card-header border-0 pb-0">
+        <h5 class="card-title">Institution Information</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+          {{university.description}}
+        </p>
+      </div>
+      <div class="card-footer border-0 pt-0">
+        <p class="card-text d-inline">Card footer</p>
+        <a href="javascript:void()" class="card-link float-right">More Information</a>
+      </div>
+    </div>
     <b-card>
       <h4 style="margin-left: 25px">
         <!-- <b-icon-arrow-left-circle-fill
@@ -42,10 +56,10 @@
 </template>
 
 <script>
-import { VclFacebook } from "vue-content-loading";
+import {VclFacebook} from 'vue-content-loading';
 export default {
-  name: "programs",
-  props: ["school_id"],
+  name: 'programs',
+  props: ['school_id'],
   components: {
     VclFacebook,
   },
@@ -59,31 +73,32 @@ export default {
 
   methods: {
     getCourses() {
-      this.$router.push({ path: "/dashboard/courses" });
+      this.$router.push({path: '/dashboard/courses'});
     },
 
     getBack() {
-      this.$router.push({ name: "universities" });
+      this.$router.push({name: 'universities'});
     },
   },
 
   mounted() {
     let data = this.$route.params.data.data.results;
+    console.log('--- DATA ---');
     console.log(data.results);
     this.programs = data;
     this.university = this.$route.params.university;
 
-    console.log("-- University ---");
+    console.log('-- University ---');
     console.log(this.university);
-    /** this.axios.get("schools/program?school_id=1").then((data) => {
-      if (data.status == 200 && data.statusText === "OK") {
+    this.axios.get('programs').then((data) => {
+      if (data.status == 200 && data.statusText === 'OK') {
         this.school = data.data.results;
         console.log('**** School ****');
         console.log(data.data.results);
       } else {
-        console.log("An error occured");
+        console.log('An error occured');
       }
-    });**/
+    });
   },
 };
 </script>
@@ -106,6 +121,7 @@ export default {
   border-radius: 15px;
   margin: 25px;
   font-weight: 800;
+  color: black;
 }
 
 .card-enhanced-one :hover {
@@ -123,7 +139,7 @@ export default {
 }
 
 .fill {
-  background-image: url("https://d13b2ieg84qqce.cloudfront.net/3dbd39d4c1401beb7773c38566cc4d728d7db4ed.jpg");
+  background-image: url('https://d13b2ieg84qqce.cloudfront.net/3dbd39d4c1401beb7773c38566cc4d728d7db4ed.jpg');
   height: 450px;
   display: flex;
   justify-content: center;

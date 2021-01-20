@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar class="header-color" toggleable="lg" type="dark" variant="warning">
+    <b-navbar class="header-color" toggleable="lg" type="dark">
       <b-button v-b-toggle.sidebar-1 style="margin-right: 10px"
         ><b-icon-list></b-icon-list
       ></b-button>
@@ -55,12 +55,8 @@ export default {};
 <style>
 .header-color {
   background: rgb(2, 0, 36);
-  background: linear-gradient(
-    76deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(122, 148, 40, 1) 35%,
-    rgba(28, 197, 205, 1) 85%,
-    rgba(0, 212, 255, 1) 100%
-  );
+  background: linear-gradient( 76deg,
+   rgba(2, 0, 36, 1) 10%,
+   rgba(122, 148, 40, 1) 35%, 90%);
 }
 </style>

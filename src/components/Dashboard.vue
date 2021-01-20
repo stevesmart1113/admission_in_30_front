@@ -1,11 +1,11 @@
 <template>
-  <div style="background-color: #ffffff">
+  <div>
     <Header />
     <b-sidebar id="sidebar-1" title="Menu" shadow class="nav-color">
       <div class="px-3 py-2">
         <div>
           <b-nav vertical class="w-30">
-            <b-nav-item
+            <b-nav-item to="/approvals"
               >Admission Requests <b-icon-person-check></b-icon-person-check
             ></b-nav-item>
             <b-nav-item>Universities <b-icon-house></b-icon-house></b-nav-item>
@@ -27,18 +27,19 @@
           <div>
             <b-button
               @click="changeBreadCrumb('universities')"
-              class="btn-spacing"
+              class="btn light btn-info"
               variant="outline-info"
               to="/dashboard/universities"
               >Universities</b-button
             >
-            <b-button
+            <button
               @click="changeBreadCrumb('schools')"
-              class="btn-spacing"
+              class="btn light btn-success"
               variant="outline-info"
               to="/dashboard/schools"
-              >Schools</b-button
             >
+              Schools
+            </button>
             <!-- <b-button
             @click="changeBreadCrumb('courses')"
             variant="outline-info"
@@ -60,9 +61,9 @@
 </template>
 
 <script>
-import Header from "./Header";
+import Header from './Header';
 export default {
-  name: "Dashboard",
+  name: 'Dashboard',
   components: {
     Header,
   },
@@ -72,38 +73,38 @@ export default {
 
   data() {
     return {
-      link_name: "",
+      link_name: '',
       universities: [],
       items: [
         {
           text: this.link_name,
-          href: "#",
+          href: '#',
         },
       ],
     };
   },
 
   created() {
-    this.items[this.items.length - 1].text = "Home";
+    this.items[this.items.length - 1].text = 'Home';
     this.getUniversities();
   },
   watch: {},
   methods: {
     changeBreadCrumb(linkName) {
-      if (linkName === "universities") {
-        this.items[this.items.length - 1].text = "Universities";
-      } else if (linkName === "schools") {
-        this.items[this.items.length - 1].text = "Schools";
-      } else if (linkName === "courses") {
-        this.items[this.items.length - 1].text = "Courses";
+      if (linkName === 'universities') {
+        this.items[this.items.length - 1].text = 'Universities';
+      } else if (linkName === 'schools') {
+        this.items[this.items.length - 1].text = 'Schools';
+      } else if (linkName === 'courses') {
+        this.items[this.items.length - 1].text = 'Courses';
       }
     },
 
     getUniversities() {
       this.axios
-        .get("http://157.230.209.212:8081/universities")
+        .get('universities/')
         .then((result) => {
-          if (result.status == 200 && result.statusText === "OK") {
+          if (result.status == 200 && result.statusText === 'OK') {
             console.log(result.data);
             this.universities = result.data;
           } else {
@@ -117,7 +118,7 @@ export default {
   },
 
   mounted() {
-    console.log("called");
+    console.log('called');
     this.getUniversities();
   },
 };

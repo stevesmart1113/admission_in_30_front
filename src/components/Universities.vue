@@ -26,16 +26,13 @@
               </b-card-body>
               <b-card-footer>
                 <b-button-group>
-                  <b-button
-                    variant="outline-info"
-                    class="btn-outlined-enhanced spacer"
+                  <button type="button" class="btn light btn-info"
                     @click="getPrograms(university)"
-                    >Apply<b-icon-check
-                  /></b-button>
-                  <!-- <b-button variant="outline-info" class="btn-outlined-enhanced"
-                  >Apply <b-icon-check
-                /></b-button>-->
+                    >Apply <b-icon-check
+                  />
+                  </button>
                   <vue-star-rate
+                     style="margin-left: 50px"
                     :rateRange="university.ranking"
                     :maxIcon="5"
                     :iconHeight="22"
@@ -52,11 +49,11 @@
         </div>
         <div></div>
         <div class="mt-3" style="margin-left: 25px">
-          <b-pagination-nav
+          <!--<b-pagination-nav
             size="md"
             number-of-pages="10"
             base-url="#"
-          ></b-pagination-nav>
+          ></b-pagination-nav>-->
         </div>
       </div>
     </div>
@@ -66,11 +63,16 @@
 <script>
 import { VclFacebook } from "vue-content-loading";
 import vueStarRate from "vue-js-star-rating";
+import axios from "axios";
 export default {
+  name: "Universities",
+  components: {
+    VclFacebook,
+    vueStarRate,
+  },
   watch: {},
   created() {
-    this.axios
-      .get("universities")
+    axios.get("universities/")
       .then((result) => {
         if (result.status == 200 && result.statusText === "OK") {
           console.log(result);
@@ -85,12 +87,6 @@ export default {
       });
   },
 
-  name: "Universities",
-  components: {
-    VclFacebook,
-    vueStarRate,
-  },
-
   data() {
     return {
       universities: [],
@@ -100,21 +96,23 @@ export default {
   },
 
   methods: {
-    getPrograms(university) {
+   getPrograms(university) {
       console.log(university.id);
-      this.axios
-        .get("schools/program?school_id=" + university.id)
+      let formed_url = `/schools/program?school_id=${university.id}`;
+      axios.get(formed_url)
         .then((data) => {
           if (data.status == 200 && data.statusText === "OK") {
             this.programs = data.data.results;
             console.log(data.data.results);
             this.$router.push({
-              name: "courses",
-              params: { data: data, university: university },
+                name: "courses",
+                params: { data: data, university: university },
             });
           } else {
             console.log("An error occured");
           }
+        }).catch((error) => {
+            console.log(error);
         });
     },
   },
