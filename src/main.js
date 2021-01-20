@@ -19,7 +19,7 @@ Vue.use(VueAxios, axios)
 Vue.use(vueStarRate)
 
 window.axios = axios
-axios.defaults.baseURL = "http://localhost:8000/"
+axios.defaults.baseURL = "http://157.230.209.212:8083/"
 
 new Vue({
   el: '#app',
