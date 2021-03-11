@@ -19,7 +19,7 @@ Vue.use(VueAxios, axios)
 Vue.use(vueStarRate)
 
 window.axios = axios
-axios.defaults.baseURL = "http://d.bluespaceafrica.com:8083/"
+axios.defaults.baseURL = "http://http://54.234.75.110"
 
 new Vue({
   el: '#app',
