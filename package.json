@@ -33,7 +33,9 @@
     "vue-stepper": "^1.0.11",
     "vuelidate": "^0.7.6",
     "vuex": "^3.6.0",
-    "yargs": "^16.2.0"
+    "yargs": "^16.2.0",
+    "vue-stepper": "^1.4.2",
+    "vuelidate": "^0.7.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
