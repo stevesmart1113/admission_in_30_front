@@ -19,7 +19,7 @@ Vue.use(VueAxios, axios)
 Vue.use(vueStarRate)
 
 window.axios = axios
-axios.defaults.baseURL = "http://54.234.75.110/"
+axios.defaults.baseURL = "https://604b4f8aee7cb900176a1c45.mockapi.io/api/v1/"
 
 new Vue({
   el: '#app',
