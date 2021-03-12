@@ -105,7 +105,7 @@ export default {
         .get('universities/')
         .then((result) => {
           if (result.status == 200 && result.statusText === 'OK') {
-            console.log(result.data);
+            //console.log(result.data[0].name);
             this.universities = result.data;
           } else {
             this.universities = [];

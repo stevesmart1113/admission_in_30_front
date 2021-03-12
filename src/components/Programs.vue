@@ -32,7 +32,7 @@
     </div>
     <b-card>
       <h4 style="margin-left: 25px">
-        <!-- <b-icon-arrow-left-circle-fill
+        <!--<b-icon-arrow-left-circle-fill
           style="width: 30px; height: 30px;"
           variant="info"
           @click="getBack"
@@ -41,14 +41,9 @@
         <span style="font-weight:bold">Programs</span>
       </h4>
       <vcl-facebook v-if="programs.length <= 0"></vcl-facebook>
-      <b-card
-        @click="getCourses"
-        v-for="program in programs"
-        :key="program.programs.program_id"
-        class="card-enhanced-one"
-      >
+      <b-card @click="getCourses" v-for="(program, key, index) in programs" :key="index" class="card-enhanced-one">
         <b-card-title style="font-size: 18px">
-          {{ program.programs.program_name }}
+          {{ program.program_name }}
         </b-card-title>
       </b-card>
     </b-card>
@@ -82,23 +77,24 @@ export default {
   },
 
   mounted() {
-    let data = this.$route.params.data.data.results;
+    let data = this.$route.params.data;
     console.log('--- DATA ---');
-    console.log(data.results);
+    console.log(data.data);
     this.programs = data;
     this.university = this.$route.params.university;
 
     console.log('-- University ---');
-    console.log(this.university);
-    this.axios.get('programs').then((data) => {
+    console.log(this.programs);
+
+    /**this.axios.get('programs').then((data) => {
       if (data.status == 200 && data.statusText === 'OK') {
-        this.school = data.data.results;
-        console.log('**** School ****');
-        console.log(data.data.results);
+          this.school = data;
+          console.log('**** School ****');
+          console.log(data);
       } else {
         console.log('An error occured');
       }
-    });
+    });**/
   },
 };
 </script>

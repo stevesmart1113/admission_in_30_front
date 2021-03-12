@@ -11,8 +11,8 @@
       <div v-else>
         <div>
           <div
-            v-for="university in universities"
-            :key="university.id"
+            v-for="(university, key, index) in universities"
+            :key="index"
             style="margin-bottom: 15px"
           >
             <b-card class="card-enhanced">
@@ -75,8 +75,10 @@ export default {
     axios.get("universities/")
       .then((result) => {
         if (result.status == 200 && result.statusText === "OK") {
-          console.log(result);
-          this.universities = result.data.results;
+          for (var i = 0; i < result.data.length; i++) {
+               console.log(result.data[i])
+               this.universities.push(result.data[i])
+          }
           this.viewType = "universities";
         } else {
           this.universities = [];
@@ -85,6 +87,7 @@ export default {
       .catch((err) => {
         console.log(err);
       });
+      this.universities = []
   },
 
   data() {
@@ -98,16 +101,17 @@ export default {
   methods: {
    getPrograms(university) {
       console.log(university.id);
-      let formed_url = `/schools/program?school_id=${university.id}`;
+      let formed_url = `programs/${university.id}`;
+      console.log(formed_url)
       axios.get(formed_url)
         .then((data) => {
           if (data.status == 200 && data.statusText === "OK") {
-            this.programs = data.data.results;
-            console.log(data.data.results);
-            this.$router.push({
-                name: "courses",
-                params: { data: data, university: university },
-            });
+              this.programs = data.data;
+              console.log(data.data);
+              this.$router.push({
+                  name: "courses",
+                  params: { data: data, university: university },
+               });
           } else {
             console.log("An error occured");
           }
