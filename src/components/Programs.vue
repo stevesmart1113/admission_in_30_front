@@ -45,7 +45,6 @@
 </template>
 
 <script>
-import {VclFacebook} from 'vue-content-loading';
 export default {
   name: 'programs',
   props: ['school_id'],
