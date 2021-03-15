@@ -49,7 +49,7 @@ export default {
   name: 'programs',
   props: ['school_id'],
   components: {
-    VclFacebook,
+    
   },
 
   data() {
