@@ -76,7 +76,6 @@ export default {
       .then((result) => {
         if (result.status == 200 && result.statusText === "OK") {
           for (var i = 0; i < result.data.length; i++) {
-               console.log(result.data[i])
                this.universities.push(result.data[i])
           }
           this.viewType = "universities";
@@ -101,16 +100,18 @@ export default {
   methods: {
    getPrograms(university) {
       console.log(university.id);
-      let formed_url = `programs/${university.id}`;
-      console.log(formed_url)
+      let formed_url = `programs?school_program_id=${university.id}`;
       axios.get(formed_url)
         .then((data) => {
+          console.log(data)
           if (data.status == 200 && data.statusText === "OK") {
               this.programs = data.data;
-              console.log(data.data);
               this.$router.push({
                   name: "courses",
-                  params: { data: data, university: university },
+                  params: { 
+                    data: data, 
+                    university: university 
+                  },
                });
           } else {
             console.log("An error occured");
